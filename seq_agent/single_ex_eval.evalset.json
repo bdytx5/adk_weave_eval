@@ -1,0 +1,77 @@
+{
+  "eval_set_id": "insurance_eval_set",
+  "name": "insurance_eval_set",
+  "description": null,
+  "eval_cases": [
+    {
+      "eval_id": "case7625a8",
+      "conversation": [
+        {
+          "invocation_id": "e-f5d01637-3137-4291-a108-700f5764a288",
+          "user_content": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "What are all of my active policies, and when is the next payment due for each?\ni am customer C20005"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "video_metadata": null,
+                "thought": null,
+                "inline_data": null,
+                "file_data": null,
+                "thought_signature": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "function_call": null,
+                "function_response": null,
+                "text": "You have one active policy:\n\n*   **Policy ID:** P100005 (Renters Insurance)\n    *   **Next Payment Due:** $63.45 on 2023-04-12"
+              }
+            ],
+            "role": null
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "id": "adk-e78ff4e3-932b-4ca8-9edb-06fa960fa5f8",
+                "args": {
+                  "status": "active",
+                  "customer_id": "C20005"
+                },
+                "name": "customer_policies"
+              },
+              {
+                "id": "adk-059cdd57-3a43-443a-b444-64faacb70156",
+                "args": {
+                  "policy_id": "P100005"
+                },
+                "name": "premium_payment_system"
+              }
+            ],
+            "intermediate_responses": []
+          },
+          "creation_timestamp": 1752463163.841444
+        }
+      ],
+      "session_input": {
+        "app_name": "seq_agent",
+        "user_id": "user",
+        "state": {}
+      },
+      "creation_timestamp": 1752463330.0583732
+    }
+  ],
+  "creation_timestamp": 1752463300.8283
+}
