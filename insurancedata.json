@@ -1,0 +1,110 @@
+{
+  "policy_lookup": [
+    {"policy_id":"P100001","customer_id":"C20001","type":"Auto","start":"2022-05-01","end":"2023-05-01","coverage":{"liability":50000,"collision":1000,"deductible":500},"exclusions":["rental cars"],"status":"active"},
+    {"policy_id":"P100002","customer_id":"C20002","type":"Homeowners","start":"2021-10-01","end":"2024-10-01","coverage":{"dwelling":150000,"personal_property":50000,"deductible":1000},"exclusions":["earthquake"],"status":"active"},
+    {"policy_id":"P100003","customer_id":"C20003","type":"Health","start":"2022-01-01","end":"2023-12-31","coverage":{"max_benefit":200000,"deductible":2000,"er":100},"exclusions":[],"status":"active"},
+    {"policy_id":"P100004","customer_id":"C20004","type":"Auto","start":"2021-03-01","end":"2022-03-01","coverage":{"liability":100000,"collision":2000,"deductible":1000},"exclusions":["flood"],"status":"expired"},
+    {"policy_id":"P100005","customer_id":"C20005","type":"Renters","start":"2022-06-01","end":"2023-06-01","coverage":{"personal_property":25000,"liability":50000,"deductible":500},"exclusions":["pets"],"status":"active"},
+    {"policy_id":"P100006","customer_id":"C20006","type":"Auto","start":"2022-02-15","end":"2023-02-15","coverage":{"liability":30000,"collision":500,"deductible":500},"exclusions":[],"status":"active"},
+    {"policy_id":"P100007","customer_id":"C20007","type":"Life","start":"2020-07-01","end":"2030-07-01","coverage":{"face_value":500000,"premium":75},"exclusions":["suicide(year1)"],"status":"active"},
+    {"policy_id":"P100008","customer_id":"C20008","type":"Homeowners","start":"2023-01-01","end":"2024-01-01","coverage":{"dwelling":250000,"deductible":1500},"exclusions":["mold"],"status":"active"},
+    {"policy_id":"P100009","customer_id":"C20009","type":"Health","start":"2021-01-01","end":"2021-12-31","coverage":{"max_benefit":50000,"deductible":5000},"exclusions":[],"status":"expired"},
+    {"policy_id":"P100010","customer_id":"C20010","type":"Auto","start":"2022-09-01","end":"2023-09-01","coverage":{"liability":25000,"collision":1500,"deductible":750},"exclusions":[],"status":"active"}
+  ],
+  "claims_status_checker": [
+    {"claim_id":"CL5001","policy_id":"P100001","date_filed":"2023-04-15","status":"pending","type":"collision","adjuster":"Alex Wu","next_step":"awaiting police report"},
+    {"claim_id":"CL5002","policy_id":"P100002","date_filed":"2023-03-12","status":"approved","type":"fire","adjuster":"Maya Lin","next_step":"payment processing"},
+    {"claim_id":"CL5003","policy_id":"P100003","date_filed":"2022-12-10","status":"denied","type":"medical","adjuster":"Sam Patel","next_step":"sent denial letter"},
+    {"claim_id":"CL5004","policy_id":"P100004","date_filed":"2021-05-18","status":"closed","type":"theft","adjuster":"Ron Adams","next_step":"none"},
+    {"claim_id":"CL5005","policy_id":"P100005","date_filed":"2022-11-22","status":"pending","type":"property damage","adjuster":"Liz Gomez","next_step":"field inspection"},
+    {"claim_id":"CL5006","policy_id":"P100006","date_filed":"2023-02-28","status":"approved","type":"collision","adjuster":"Kent Lee","next_step":"payment sent"},
+    {"claim_id":"CL5007","policy_id":"P100007","date_filed":"2022-08-01","status":"pending","type":"death benefit","adjuster":"Sue Kim","next_step":"medical records requested"},
+    {"claim_id":"CL5008","policy_id":"P100008","date_filed":"2022-09-10","status":"closed","type":"storm damage","adjuster":"James Do","next_step":"none"},
+    {"claim_id":"CL5009","policy_id":"P100009","date_filed":"2021-06-05","status":"approved","type":"medical","adjuster":"Diane Ho","next_step":"payment processing"},
+    {"claim_id":"CL5010","policy_id":"P100010","date_filed":"2023-05-03","status":"pending","type":"collision","adjuster":"Steve West","next_step":"car inspection"}
+  ],
+  "coverage_calculator": [
+    {"policy_id":"P100001","option":"raise liability","change":25000,"new_premium":103.50,"new_deductible":500},
+    {"policy_id":"P100002","option":"lower deductible","change":500,"new_premium":97.00,"new_deductible":500},
+    {"policy_id":"P100003","option":"add dental","change":1,"new_premium":129.99,"new_deductible":2500},
+    {"policy_id":"P100004","option":"add roadside","change":1,"new_premium":111.00,"new_deductible":1000},
+    {"policy_id":"P100005","option":"increase personal property","change":10000,"new_premium":87.40,"new_deductible":500},
+    {"policy_id":"P100006","option":"raise collision coverage","change":2500,"new_premium":120.00,"new_deductible":750},
+    {"policy_id":"P100007","option":"raise face value","change":100000,"new_premium":88.60,"new_deductible":0},
+    {"policy_id":"P100008","option":"lower deductible","change":-500,"new_premium":140.00,"new_deductible":1000},
+    {"policy_id":"P100009","option":"add vision","change":1,"new_premium":64.80,"new_deductible":4000},
+    {"policy_id":"P100010","option":"raise liability","change":20000,"new_premium":112.70,"new_deductible":750}
+  ],
+  "premium_payment_system": [
+    {"invoice_id":"INV3001","policy_id":"P100001","due_date":"2023-05-05","amount_due":120.00,"status":"unpaid"},
+    {"invoice_id":"INV3002","policy_id":"P100002","due_date":"2024-11-01","amount_due":110.75,"status":"paid"},
+    {"invoice_id":"INV3003","policy_id":"P100003","due_date":"2023-01-15","amount_due":105.30,"status":"unpaid"},
+    {"invoice_id":"INV3004","policy_id":"P100004","due_date":"2022-03-01","amount_due":94.99,"status":"late"},
+    {"invoice_id":"INV3005","policy_id":"P100005","due_date":"2023-04-12","amount_due":63.45,"status":"unpaid"},
+    {"invoice_id":"INV3006","policy_id":"P100006","due_date":"2023-02-15","amount_due":122.00,"status":"paid"},
+    {"invoice_id":"INV3007","policy_id":"P100007","due_date":"2023-07-01","amount_due":75.00,"status":"unpaid"},
+    {"invoice_id":"INV3008","policy_id":"P100008","due_date":"2023-01-30","amount_due":150.00,"status":"paid"},
+    {"invoice_id":"INV3009","policy_id":"P100009","due_date":"2022-01-10","amount_due":80.85,"status":"late"},
+    {"invoice_id":"INV3010","policy_id":"P100010","due_date":"2023-09-01","amount_due":130.00,"status":"unpaid"}
+  ],
+  "appointment_schedule_checker": [
+    {"appointment_id":"A4101","customer_id":"C20001","type":"callback","date":"2023-05-06T10:00:00","status":"scheduled"},
+    {"appointment_id":"A4102","customer_id":"C20002","type":"adjuster_visit","date":"2023-06-16T14:30:00","status":"completed"},
+    {"appointment_id":"A4103","customer_id":"C20003","type":"callback","date":"2023-04-15T16:45:00","status":"cancelled"},
+    {"appointment_id":"A4104","customer_id":"C20004","type":"adjuster_visit","date":"2023-07-11T09:10:00","status":"scheduled"},
+    {"appointment_id":"A4105","customer_id":"C20005","type":"callback","date":"2023-04-12T09:00:00","status":"completed"},
+    {"appointment_id":"A4106","customer_id":"C20006","type":"callback","date":"2023-03-21T11:00:00","status":"no-show"},
+    {"appointment_id":"A4107","customer_id":"C20007","type":"adjuster_visit","date":"2023-09-01T13:00:00","status":"scheduled"},
+    {"appointment_id":"A4108","customer_id":"C20008","type":"callback","date":"2023-07-20T15:30:00","status":"completed"},
+    {"appointment_id":"A4109","customer_id":"C20009","type":"adjuster_visit","date":"2023-08-19T08:30:00","status":"scheduled"},
+    {"appointment_id":"A4110","customer_id":"C20010","type":"callback","date":"2023-04-21T16:00:00","status":"completed"}
+  ],
+  "faq_search": [
+    {"faq_id":"F001","question":"How can I file a claim?","answer":"You can file a claim online, by phone, or with your agent. Have your policy and event details ready."},
+    {"faq_id":"F002","question":"What is a deductible?","answer":"A deductible is the amount you pay out of pocket before your insurance covers the rest."},
+    {"faq_id":"F003","question":"Which damages are excluded from homeowners policies?","answer":"Damages from floods and earthquakes are not covered unless you have special endorsements."},
+    {"faq_id":"F004","question":"Can I add a new car to my policy?","answer":"Yes, contact us to update your policy and get a quote for additional vehicles."},
+    {"faq_id":"F005","question":"How do I pay my premium?","answer":"Premiums can be paid online, by mail, or through our mobile app."},
+    {"faq_id":"F006","question":"How do I contact my adjuster?","answer":"Adjuster contact information is provided in your claim status or by phone."},
+    {"faq_id":"F007","question":"Can I change my deductible amount?","answer":"Deductibles can be changed at renewal or midterm with some restrictions."},
+    {"faq_id":"F008","question":"What documents do I need for a property claim?","answer":"You'll need photos of the damage, a list of damaged items, and a completed claim form."},
+    {"faq_id":"F009","question":"What determines my premium cost?","answer":"Premiums are based on factors like coverage, deductible, claims history, and risk factors."},
+    {"faq_id":"F010","question":"Can I get digital copies of my policy?","answer":"Yes, digital copies are available in your account or by request."}
+  ],
+  "find_nearby_repair_shop": [
+    {"shop_id":"R01","name":"AutoFix Pros","zip":"60636","approved":true,"phone":"773-555-1010"},
+    {"shop_id":"R02","name":"QualityAuto Repair","zip":"60636","approved":true,"phone":"773-555-1020"},
+    {"shop_id":"R03","name":"Westend Collision","zip":"60640","approved":true,"phone":"773-555-2020"},
+    {"shop_id":"R04","name":"Uptown Motors","zip":"60613","approved":false,"phone":"773-555-1122"},
+    {"shop_id":"R05","name":"Speedy Body Shop","zip":"60637","approved":true,"phone":"773-555-3150"},
+    {"shop_id":"R06","name":"StateLine Garage","zip":"60638","approved":true,"phone":"773-555-4800"},
+    {"shop_id":"R07","name":"City Car Care","zip":"60606","approved":true,"phone":"312-555-8181"},
+    {"shop_id":"R08","name":"Premium Collision","zip":"60636","approved":false,"phone":"773-555-9009"},
+    {"shop_id":"R09","name":"Lakefront Auto","zip":"60641","approved":true,"phone":"773-555-5637"},
+    {"shop_id":"R10","name":"GoQuick Repairs","zip":"60610","approved":true,"phone":"312-555-7234"}
+  ],
+  "insurance_quote_data": [
+    {"quote_id":"Q3001","customer_id":"C20001","coverage":"auto-basic","premium":109.50,"deductible":500,"valid_until":"2023-06-01"},
+    {"quote_id":"Q3002","customer_id":"C20002","coverage":"home-standard","premium":120.20,"deductible":1000,"valid_until":"2024-01-01"},
+    {"quote_id":"Q3003","customer_id":"C20003","coverage":"health-plus","premium":138.96,"deductible":3000,"valid_until":"2023-07-15"},
+    {"quote_id":"Q3004","customer_id":"C20004","coverage":"auto-plus","premium":145.32,"deductible":250,"valid_until":"2022-04-18"},
+    {"quote_id":"Q3005","customer_id":"C20005","coverage":"renters-basic","premium":65.00,"deductible":500,"valid_until":"2023-06-15"},
+    {"quote_id":"Q3006","customer_id":"C20006","coverage":"auto-standard","premium":127.00,"deductible":750,"valid_until":"2023-03-01"},
+    {"quote_id":"Q3007","customer_id":"C20007","coverage":"life-standard","premium":79.25,"deductible":0,"valid_until":"2023-09-01"},
+    {"quote_id":"Q3008","customer_id":"C20008","coverage":"home-premium","premium":143.20,"deductible":1500,"valid_until":"2023-02-10"},
+    {"quote_id":"Q3009","customer_id":"C20009","coverage":"health-basic","premium":59.49,"deductible":5000,"valid_until":"2022-12-31"},
+    {"quote_id":"Q3010","customer_id":"C20010","coverage":"auto-basic","premium":115.95,"deductible":750,"valid_until":"2023-10-01"}
+  ],
+  "customer_profile_lookup": [
+    {"customer_id":"C20001","name":"Jane Smith","email":"jsmith@email.com","phone":"555-4410","dob":"1982-03-01"},
+    {"customer_id":"C20002","name":"Tracy Brown","email":"tbrown@email.com","phone":"555-2222","dob":"1976-08-14"},
+    {"customer_id":"C20003","name":"Kim Lee","email":"klee@email.com","phone":"555-3333","dob":"1993-11-12"},
+    {"customer_id":"C20004","name":"Lynn Turner","email":"l.turner@email.com","phone":"555-4444","dob":"1981-04-25"},
+    {"customer_id":"C20005","name":"Doug Ritter","email":"dougr@email.com","phone":"555-4622","dob":"1972-09-09"},
+    {"customer_id":"C20006","name":"Amy Walton","email":"walton@gmail.com","phone":"555-1988","dob":"1979-02-17"},
+    {"customer_id":"C20007","name":"Sam Patel","email":"sam.patel@email.com","phone":"555-2841","dob":"1989-05-31"},
+    {"customer_id":"C20008","name":"Renee Lopez","email":"renee@email.com","phone":"555-9382","dob":"1978-01-22"},
+    {"customer_id":"C20009","name":"Ivan Chen","email":"ivanchen@email.com","phone":"555-1234","dob":"1992-07-11"},
+    {"customer_id":"C20010","name":"Beth West","email":"bethw@email.com","phone":"555-2988","dob":"1985-12-02"}
+  ]
+}
